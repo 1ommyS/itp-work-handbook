@@ -1,0 +1,55 @@
+name: Documentation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: Publish the checked site to the gh-pages branch
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - name: Check sources, strict build, local links and anchors
+        run: python scripts/docs.py check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: handbook-site
+          path: site/
+
+  deploy:
+    needs: check
+    if: github.event_name == 'workflow_dispatch' && inputs.deploy && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - run: python scripts/docs.py bootstrap
+      - name: Publish with MkDocs, as in itp-ebook
+        env:
+          ENABLE_GIT_DATES: 'true'
+        run: .venv/bin/python -m mkdocs gh-deploy --strict --force
