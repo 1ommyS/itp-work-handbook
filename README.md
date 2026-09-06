@@ -70,7 +70,7 @@ requirements.in            # прямые зависимости
 requirements.txt           # закреплённые прямые и транзитивные зависимости
 scripts/docs.py            # единая команда bootstrap / serve / build / check
 scripts/check_docs.py      # проверки источников и готового HTML
-.github/workflows/docs.yml # CI и публикация по ручному запуску
+.github/workflows/docs.yml # CI и автоматическая публикация из main
 .vscode/settings.json      # схема YAML и UTF-8
 ```
 
@@ -102,7 +102,7 @@ Git-даты показывают изменения файла, а не дат�
 
 GitHub Actions выполняет `check` на push в `main` и pull request, затем сохраняет готовый сайт как артефакт `handbook-site`. История Git загружается полностью для корректных дат.
 
-Публикация повторяет механизм референса — `mkdocs gh-deploy` в ветку `gh-pages`. Чтобы опубликовать сайт, в GitHub запустите workflow **Documentation** через **Run workflow** на ветке `main` с флагом `deploy`. Публикация выполняется только после успешной проверки. В **Settings → Pages** укажите **Deploy from a branch → gh-pages → /(root)**. Ожидаемый адрес задан в `site_url`; наличие конфига не означает, что сайт уже опубликован.
+После каждого push в `main` успешная проверка автоматически запускает `mkdocs gh-deploy`, как в `itp-ebook`. Первый успешный deploy создаёт ветку `gh-pages`, последующие обновляют её. Pull request запускает только проверки. Повторить публикацию можно через **Documentation → Run workflow** на ветке `main`. В **Settings → Pages** укажите **Deploy from a branch → gh-pages → /(root)** после создания ветки. Ожидаемый адрес задан в `site_url`; наличие конфига не означает, что сайт уже опубликован.
 
 Если репозиторий переименован или перенесён, обновите `site_url`, `repo_name`, `repo_url` и `edit_uri` в `mkdocs.yml`.
 
