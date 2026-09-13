@@ -29,6 +29,8 @@ theme:
         icon: material/brightness-4
         name: Переключить на светлую тему
   features:
+    - navigation.instant
+    - navigation.instant.progress
     - content.action.edit
     - content.action.view
     - content.code.copy
@@ -37,12 +39,16 @@ theme:
     - navigation.indexes
     - navigation.sections
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.top
     - navigation.tracking
     - search.highlight
     - search.share
     - search.suggest
     - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
 
 markdown_extensions:
   - admonition
@@ -107,6 +113,10 @@ nav:
       - Этапы найма: interviews/process.md
       - Поведенческое интервью: interviews/behavioral.md
       - Вопросы компании: interviews/company.md
+  - Практикум собеседований:
+      - Как работать с базой: interview-bank/index.md
+      - Классические вопросы по Java: interview-bank/java.md
+      - 50 задач LeetCode: interview-bank/leetcode-50.md
   - Техническая подготовка:
       - Разработчикам: technical/developer.md
       - Алгоритмы и live coding: technical/algorithms.md
