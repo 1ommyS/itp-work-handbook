@@ -1,0 +1,2491 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Практическое руководство по поиску работы в IT в России — от выбора цели до проверки оффера.">
+      
+      
+      
+        <link rel="canonical" href="https://1ommys.github.io/itp-work-handbook/interview-bank/java-core/">
+      
+      
+        <link rel="prev" href="../java/">
+      
+      
+        <link rel="next" href="../java-runtime/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>1–80 · Java Core - Работа в IT — handbook 2026</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#java-core-80" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Работа в IT — handbook 2026" class="md-header__button md-logo" aria-label="Работа в IT — handbook 2026" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6c.58 0 1.05.2 1.42.59.38.41.58.86.58 1.41v11c0 .55-.2 1-.58 1.41-.37.39-.84.59-1.42.59H4c-.58 0-1.05-.2-1.42-.59C2.2 20 2 19.55 2 19V8c0-.55.2-1 .58-1.41C2.95 6.2 3.42 6 4 6h4V4c0-.58.2-1.05.58-1.42C8.95 2.2 9.42 2 10 2h4c.58 0 1.05.2 1.42.58.38.37.58.84.58 1.42v2zM4 8v11h16V8zm10-2V4h-4v2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Работа в IT — handbook 2026
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1–80 · Java Core
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/1ommyS/itp-work-handbook" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    1ommyS/itp-work-handbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Начало
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/market-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Стратегия
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resume/resume/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Резюме и профиль
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../job-search/channels/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Поиск вакансий
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../interviews/process/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Собеседования
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Практикум собеседований
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../technical/developer/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Техническая подготовка
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../salary/negotiation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Зарплата и оффер
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../templates/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Шаблоны
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../resources/sources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Источники
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Работа в IT — handbook 2026" class="md-nav__button md-logo" aria-label="Работа в IT — handbook 2026" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6c.58 0 1.05.2 1.42.59.38.41.58.86.58 1.41v11c0 .55-.2 1-.58 1.41-.37.39-.84.59-1.42.59H4c-.58 0-1.05-.2-1.42-.59C2.2 20 2 19.55 2 19V8c0-.55.2-1 .58-1.41C2.95 6.2 3.42 6 4 6h4V4c0-.58.2-1.05.58-1.42C8.95 2.2 9.42 2 10 2h4c.58 0 1.05.2 1.42.58.38.37.58.84.58 1.42v2zM4 8v11h16V8zm10-2V4h-4v2z"/></svg>
+
+    </a>
+    Работа в IT — handbook 2026
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/1ommyS/itp-work-handbook" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    1ommyS/itp-work-handbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Стратегия
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Стратегия
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/market-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Рынок России в 2026 году
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/target/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Цель и выбор работодателя
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    План поиска работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/no-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Без коммерческого опыта
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Резюме и профиль
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Резюме и профиль
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resume/resume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Резюме для российского рынка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resume/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Примеры формулировок
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resume/profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Профиль и портфолио
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поиск вакансий
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Поиск вакансий
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../job-search/channels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Каналы поиска
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../job-search/applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отклики и воронка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../job-search/recruiter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общение с рекрутером
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../job-search/rejections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отказы и диагностика
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Собеседования
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Собеседования
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interviews/process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Этапы найма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interviews/behavioral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поведенческое интервью
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interviews/company/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Вопросы компании
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практикум собеседований
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Практикум собеседований
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java — 240 вопросов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Java — 240 вопросов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Карта раздела
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1–80 · Java Core
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1–80 · Java Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-toc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Мини-TOC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-oop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Язык и ООП
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-string-records-sealed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типы, String, records и sealed-классы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collections-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collections Framework
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Исключения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotations-reflection-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Аннотации, reflection и модули
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#date-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date and Time API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-nio-serialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O, NIO и сериализация
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#official-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Официальные источники
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java-runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    81–160 · JVM и Concurrency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java-ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    161–240 · Spring, Data, Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leetcode-50/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    50 задач LeetCode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Техническая подготовка
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Техническая подготовка
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Разработчикам
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Алгоритмы и live coding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/system-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design по уровням
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QA, аналитика, DevOps, дизайн и продукт
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Зарплата и оффер
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Зарплата и оффер
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../salary/negotiation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ожидания и переговоры
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../salary/offer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проверка оффера
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Шаблоны
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-toc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Мини-TOC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-oop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Язык и ООП
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-string-records-sealed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типы, String, records и sealed-классы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collections-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collections Framework
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Исключения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotations-reflection-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Аннотации, reflection и модули
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#date-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date and Time API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-nio-serialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O, NIO и сериализация
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#official-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Официальные источники
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/1ommyS/itp-work-handbook/edit/main/docs/interview-bank/java-core.md" title="Редактировать страницу" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/1ommyS/itp-work-handbook/raw/main/docs/interview-bank/java-core.md" title="Посмотреть исходный код страницы" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="java-core-80">Java Core: 80 вопросов для собеседования<a class="headerlink" href="#java-core-80" title="Permanent link">&para;</a></h1>
+<p>Банк охватывает Java Core, который часто проверяют отдельно от JVM, многопоточности и фреймворков. Метка <strong>junior</strong>, <strong>middle</strong> или <strong>senior</strong> показывает глубину ожидаемого ответа: сначала ответьте вслух сами, затем сравните с ориентиром.</p>
+<h2 id="-toc">Мини-TOC<a class="headerlink" href="#-toc" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#language-oop">Язык и ООП — 1–15</a></li>
+<li><a href="#types-string-records-sealed">Типы, String, records и sealed-классы — 16–27</a></li>
+<li><a href="#collections-framework">Collections Framework — 28–39</a></li>
+<li><a href="#generics">Generics — 40–47</a></li>
+<li><a href="#exceptions">Исключения — 48–54</a></li>
+<li><a href="#annotations-reflection-modules">Аннотации, reflection и модули — 55–64</a></li>
+<li><a href="#date-time">Date and Time API — 65–70</a></li>
+<li><a href="#io-nio-serialization">I/O, NIO и сериализация — 71–80</a></li>
+<li><a href="#official-sources">Официальные источники</a></li>
+</ul>
+<h2 id="language-oop">Язык и ООП<a class="headerlink" href="#language-oop" title="Permanent link">&para;</a></h2>
+<p><strong>1. Чем JDK, JVM и понятие JRE отличаются друг от друга?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> JVM исполняет байткод, а JDK включает JVM, стандартные библиотеки, компилятор и инструменты разработки. JRE — историческое название среды запуска; отдельный публичный JRE после Java 8 обычно не поставляется.</p>
+<p><strong>2. Что происходит от файла <code>.java</code> до выполнения программы?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> <code>javac</code> компилирует исходник в байткод <code>.class</code>, загрузчики классов находят его, JVM проверяет и выполняет, а JIT может скомпилировать горячие участки в машинный код. Байткод обеспечивает переносимость, пока код не зависит от платформенных деталей.</p>
+<p><strong>3. Как Java передаёт аргументы в методы?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> Только по значению: для примитива копируется само значение, для объекта — значение ссылки. Метод может изменить объект через копию ссылки, но не может переназначить переменную вызывающего кода.</p>
+<p><strong>4. Чем поле, локальная переменная и параметр метода отличаются по инициализации?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> Поля получают значения по умолчанию, а локальную переменную нужно определённо присвоить до чтения; параметры уже считаются инициализированными. Область видимости и время жизни у них также различаются.</p>
+<p><strong>5. Что означают модификаторы доступа <code>private</code>, package-private, <code>protected</code> и <code>public</code>?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> Они последовательно открывают доступ классу, пакету, пакету и наследникам, либо всем. <code>protected</code> у наследника из другого пакета имеет дополнительные ограничения при доступе через ссылку.</p>
+<p><strong>6. Чем <code>static</code>, <code>final</code> и <code>abstract</code> меняют член или класс?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> <code>static</code> связывает член с классом, <code>final</code> запрещает повторное присваивание, переопределение или наследование в зависимости от места, а <code>abstract</code> требует реализации. <code>final</code> у ссылки не делает объект неизменяемым.</p>
+<p><strong>7. В каком порядке инициализируются класс и объект?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> При первой активной загрузке выполняются статические поля и блоки в текстовом порядке; при создании объекта сначала инициализируется родитель, затем поля и блоки экземпляра, затем конструктор. До явной инициализации поля имеют значения по умолчанию.</p>
+<p><strong>8. Чем перегрузка метода отличается от переопределения?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> Перегрузка разрешается компилятором по объявленным типам аргументов, переопределение выбирается во время выполнения по фактическому классу объекта. <code>static</code>-методы скрываются, а не переопределяются.</p>
+<p><strong>9. Какие правила действуют при переопределении метода?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Сигнатура должна совпадать, возвращаемый ссылочный тип может быть ковариантным, доступ нельзя сузить, а checked-исключения нельзя расширить. Методы <code>final</code>, <code>private</code> и конструкторы не переопределяются.</p>
+<p><strong>10. Что такое динамический полиморфизм и где он полезен?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> Вызов переопределённого экземплярного метода выбирается по фактическому типу объекта, даже если переменная объявлена интерфейсом или базовым классом. Это позволяет менять реализации за стабильным контрактом.</p>
+<p><strong>11. Когда выбирать интерфейс, абстрактный класс или композицию?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Интерфейс задаёт роль без общего состояния, абстрактный класс делит состояние и часть реализации, композиция собирает поведение из самостоятельных объектов. Наследование оправдано при настоящем отношении «является» и сохранении контракта базового типа.</p>
+<p><strong>12. Какие методы разрешены в интерфейсе современной Java?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Помимо абстрактных, интерфейс может содержать <code>default</code>, <code>static</code> и с Java 9 <code>private</code>-методы; поля неявно <code>public static final</code>. Конфликт двух унаследованных <code>default</code>-реализаций класс разрешает явно.</p>
+<p><strong>13. Как работает конструктор и можно ли его наследовать или переопределить?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> Конструктор инициализирует новый экземпляр, не имеет возвращаемого типа и не наследуется. Первый вызов в нём направлен к другому конструктору этого класса через <code>this(...)</code> или родителя через <code>super(...)</code>.</p>
+<p><strong>14. Что такое вложенные, внутренние и локальные классы?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Статический вложенный класс не хранит неявную ссылку на внешний экземпляр, а нестатический внутренний хранит. Локальный класс объявляют внутри блока; анонимный класс одновременно объявляет и создаёт единственный безымянный тип.</p>
+<p><strong>15. Что означает неизменяемость объекта и как её обеспечить?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Наблюдаемое состояние объекта не меняется после создания: поля закрыты, мутаций нет, а изменяемые входы и выходы копируются. <code>final</code>-поля помогают безопасной публикации, но сами по себе не защищают вложенные изменяемые объекты.</p>
+<h2 id="types-string-records-sealed">Типы, String, records и sealed-классы<a class="headerlink" href="#types-string-records-sealed" title="Permanent link">&para;</a></h2>
+<p><strong>16. Какие примитивные типы есть в Java и чем они отличаются от ссылочных?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> Есть <code>byte</code>, <code>short</code>, <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>, <code>char</code> и <code>boolean</code>; их переменные хранят значение и не бывают <code>null</code>. Ссылочная переменная указывает на объект или содержит <code>null</code>.</p>
+<p><strong>17. Как работают widening, narrowing и числовые promotions?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Расширяющее преобразование обычно не требует cast, сужающее требует и может потерять данные. В арифметике <code>byte</code>, <code>short</code> и <code>char</code> продвигаются минимум до <code>int</code>, а смешанные операнды приводятся к общему более широкому типу.</p>
+<p><strong>18. Какие ловушки есть у вычислений с <code>float</code> и <code>double</code>?</strong> · <strong>junior/middle</strong><br />
+<strong>Ориентир:</strong> Двоичная плавающая точка не представляет многие десятичные дроби точно, поэтому прямое сравнение результатов часто ошибочно. Для денег обычно используют <code>BigDecimal</code> с явно выбранными scale и rounding mode.</p>
+<p><strong>19. Как работают boxing, unboxing и кэширование обёрток?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Компилятор вставляет преобразования между примитивом и классом-обёрткой; unboxing <code>null</code> вызывает <code>NullPointerException</code>. Сравнение обёрток через <code>==</code> ненадёжно из-за идентичности и ограниченного обязательного кэша, поэтому используют <code>equals()</code>.</p>
+<p><strong>20. Чем <code>==</code> отличается от <code>equals()</code> для объектов и строк?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> <code>==</code> сравнивает идентичность ссылок, а <code>equals()</code> — логическое равенство согласно реализации класса. У <code>String</code> <code>equals()</code> сравнивает последовательность символов.</p>
+<p><strong>21. Каков контракт <code>equals()</code> и <code>hashCode()</code>?</strong> · <strong>junior/middle</strong><br />
+<strong>Ориентир:</strong> <code>equals()</code> должен быть рефлексивным, симметричным, транзитивным, стабильным и возвращать <code>false</code> для <code>null</code>. Равные объекты обязаны иметь одинаковый hash code, иначе hash-коллекции работают некорректно.</p>
+<p><strong>22. Почему <code>String</code> неизменяем и что это даёт?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> После создания содержимое строки не меняется: операции возвращают новый результат. Это делает строки безопаснее для совместного использования, кэширования hash code, пула строк и ключей коллекций.</p>
+<p><strong>23. Что такое string pool и как работает <code>intern()</code>?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> JVM хранит канонические экземпляры строковых литералов и интернированных значений; одинаковые литералы обычно ссылаются на один объект. <code>intern()</code> возвращает каноническую ссылку, но массовая интернизация динамических данных может расходовать память.</p>
+<p><strong>24. Когда использовать <code>StringBuilder</code>, <code>StringBuffer</code> и конкатенацию <code>+</code>?</strong> · <strong>junior/middle</strong><br />
+<strong>Ориентир:</strong> Для серии изменений в одном потоке подходит <code>StringBuilder</code>, синхронизированный <code>StringBuffer</code> нужен редко. Конкатенация нескольких выражений читаема и оптимизируется компилятором, но <code>+</code> в большом цикле может создавать лишнюю работу.</p>
+<p><strong>25. Что такое <code>record</code> и какие ограничения у record-класса?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> <code>record</code> кратко объявляет неизменяемый носитель данных и генерирует компоненты, конструктор, <code>equals</code>, <code>hashCode</code> и <code>toString</code>. Он неявно <code>final</code>, не может наследовать другой класс и не обеспечивает глубокую неизменяемость компонентов.</p>
+<p><strong>26. Чем канонический и compact-конструкторы record отличаются?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Канонический конструктор принимает все компоненты в объявленном порядке, а compact-форма опускает список параметров и неявные присваивания. Compact-конструктор удобен для проверки и нормализации входов до присваивания полям.</p>
+<p><strong>27. Что дают <code>sealed</code>, <code>non-sealed</code> и <code>permits</code>?</strong> · <strong>middle/senior</strong><br />
+<strong>Ориентир:</strong> Sealed-тип ограничивает список прямых наследников, указанных явно или выведенных в одном compilation unit. Каждый разрешённый наследник должен быть <code>final</code>, <code>sealed</code> либо <code>non-sealed</code>, что делает иерархию контролируемой и помогает исчерпывающему pattern matching.</p>
+<h2 id="collections-framework">Collections Framework<a class="headerlink" href="#collections-framework" title="Permanent link">&para;</a></h2>
+<p><strong>28. Чем <code>Collection</code>, <code>List</code>, <code>Set</code>, <code>Queue</code>, <code>Deque</code> и <code>Map</code> отличаются?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> <code>List</code> — последовательность с повторами, <code>Set</code> — множество уникальных значений, <code>Queue</code>/<code>Deque</code> задают порядок извлечения, <code>Map</code> хранит пары ключ–значение. <code>Map</code> не наследует <code>Collection</code>.</p>
+<p><strong>29. Когда выбирать <code>ArrayList</code>, а когда <code>LinkedList</code>?</strong> · <strong>junior/middle</strong><br />
+<strong>Ориентир:</strong> <code>ArrayList</code> обычно быстрее для обхода, чтения по индексу и добавления в конец благодаря компактному массиву. <code>LinkedList</code> полезен как deque и при изменении через уже найденный iterator, но случайный доступ и расход памяти у него хуже.</p>
+<p><strong>30. Как устроен <code>HashMap</code> на уровне, достаточном для собеседования?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Hash code преобразуется в индекс корзины, после чего ключ ищется через <code>equals()</code>; при большом числе коллизий корзина может стать сбалансированным деревом. Расширение таблицы происходит после превышения порога <code>capacity × loadFactor</code>.</p>
+<p><strong>31. Почему изменяемый ключ опасен для <code>HashMap</code> и <code>HashSet</code>?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Если после вставки изменились поля, участвующие в <code>equals()</code> или <code>hashCode()</code>, поиск пойдёт в другую корзину или перестанет находить равный ключ. Ключи должны быть фактически неизменяемыми на время хранения.</p>
+<p><strong>32. Чем <code>HashMap</code>, <code>LinkedHashMap</code> и <code>TreeMap</code> отличаются?</strong> · <strong>junior/middle</strong><br />
+<strong>Ориентир:</strong> <code>HashMap</code> не гарантирует порядка, <code>LinkedHashMap</code> сохраняет порядок вставки или доступа, <code>TreeMap</code> сортирует ключи по <code>Comparable</code> или <code>Comparator</code>. Типичные операции у hash-map амортизированно <code>O(1)</code>, у tree-map — <code>O(log n)</code>.</p>
+<p><strong>33. Как <code>HashSet</code>, <code>LinkedHashSet</code> и <code>TreeSet</code> определяют уникальность?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Первые два используют <code>equals()</code> и <code>hashCode()</code>, а <code>TreeSet</code> считает элементы одинаковыми, когда сравнение даёт ноль. Поэтому comparator, несовместимый с <code>equals()</code>, может дать неожиданную семантику множества.</p>
+<p><strong>34. Чем <code>Comparable</code> отличается от <code>Comparator</code>?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> <code>Comparable</code> задаёт естественный порядок внутри класса через <code>compareTo</code>, а <code>Comparator</code> — внешний или альтернативный порядок. Comparator можно компоновать через <code>comparing</code>, <code>thenComparing</code>, <code>reversed</code> и правила для <code>null</code>.</p>
+<p><strong>35. Что такое fail-fast iterator и почему это не гарантия безопасности?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Многие итераторы best-effort обнаруживают структурное изменение коллекции и выбрасывают <code>ConcurrentModificationException</code>. Это средство диагностики ошибки, а не механизм синхронизации и не обещание обнаружить каждую гонку.</p>
+<p><strong>36. Чем неизменяемая коллекция отличается от unmodifiable view?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> <code>Collections.unmodifiableList(source)</code> запрещает изменения через view, но отражает изменения исходной коллекции. <code>List.copyOf</code> и фабрики <code>List.of</code> создают неизменяемые коллекции, хотя изменяемые элементы внутри остаются изменяемыми.</p>
+<p><strong>37. Чем методы <code>add/remove/element</code> очереди отличаются от <code>offer/poll/peek</code>?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> Первая группа сообщает о невозможности операции исключением, вторая — специальным значением (<code>false</code> или <code>null</code>). Выбор зависит от того, является ли пустота или ограниченная вместимость нормальным состоянием.</p>
+<p><strong>38. Для чего нужны <code>EnumSet</code> и <code>EnumMap</code>?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Это компактные и быстрые коллекции для ключей одного enum-типа: <code>EnumSet</code> обычно хранит битовую маску, <code>EnumMap</code> — массив значений. Они сохраняют естественный порядок enum-констант и не принимают <code>null</code>-ключи.</p>
+<p><strong>39. Что происходит в методах <code>List.subList()</code> и <code>Map</code> collection views?</strong> · <strong>senior</strong><br />
+<strong>Ориентир:</strong> <code>subList</code>, <code>keySet</code>, <code>values</code> и <code>entrySet</code> обычно являются представлениями исходной структуры, поэтому изменения через них могут менять оригинал. Структурные изменения списка вне <code>subList</code> делают дальнейшую работу view неопределённой контрактом и обычно приводят к исключению.</p>
+<h2 id="generics">Generics<a class="headerlink" href="#generics" title="Permanent link">&para;</a></h2>
+<p><strong>40. Зачем нужны generics и что такое type erasure?</strong> · <strong>junior/middle</strong><br />
+<strong>Ориентир:</strong> Generics дают проверку типов на этапе компиляции и уменьшают число cast. Большинство параметров типов стирается до bound или <code>Object</code>, а компилятор вставляет преобразования и при необходимости bridge-методы.</p>
+<p><strong>41. Почему <code>List&lt;Integer&gt;</code> не является подтипом <code>List&lt;Number&gt;</code>?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Generics в Java инвариантны: иначе в список целых через ссылку <code>List&lt;Number&gt;</code> можно было бы добавить <code>Double</code>. Для безопасной вариативности используют wildcard.</p>
+<p><strong>42. Как объяснить правило PECS?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Producer Extends, Consumer Super: из <code>? extends T</code> безопасно читать <code>T</code>, а в <code>? super T</code> безопасно записывать <code>T</code>. В producer нельзя добавить конкретное значение, кроме <code>null</code>, потому что точный подтип неизвестен.</p>
+<p><strong>43. Чем unbounded wildcard <code>?</code> отличается от <code>Object</code>?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> <code>List&lt;?&gt;</code> означает список некоторого неизвестного типа и принимает <code>List&lt;String&gt;</code> или <code>List&lt;Integer&gt;</code>, а <code>List&lt;Object&gt;</code> — список, в который можно складывать любые объекты. Из <code>List&lt;?&gt;</code> значения читаются как <code>Object</code>, но добавить можно только <code>null</code>.</p>
+<p><strong>44. Что такое bounded type parameter и intersection bound?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Запись <code>&lt;T extends Base &amp; Interface1 &amp; Interface2&gt;</code> ограничивает допустимые типы и открывает методы всех bounds. Класс, если он есть, должен стоять первым, а остальных интерфейсов может быть несколько.</p>
+<p><strong>45. Когда нужен generic-метод и как выводится его тип?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Generic-метод объявляет собственный параметр перед возвращаемым типом и полезен, когда тип связывает аргументы с результатом независимо от generic-класса. Компилятор выводит его из аргументов, target type и bounds; иногда type witness задают явно.</p>
+<p><strong>46. Почему нельзя создать <code>new T()</code>, <code>new T[]</code> или проверить <code>instanceof List&lt;String&gt;</code>?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> После стирания JVM обычно не знает конкретный параметр типа, поэтому такие операции не могут гарантировать проверяемый runtime-тип. Решения — передать <code>Class&lt;T&gt;</code> или фабрику, использовать списки либо проверять только reifiable-тип вроде <code>List&lt;?&gt;</code>.</p>
+<p><strong>47. Что такое heap pollution, raw types и <code>@SafeVarargs</code>?</strong> · <strong>senior</strong><br />
+<strong>Ориентир:</strong> Heap pollution возникает, когда переменная параметризованного типа ссылается на объект несовместимого типа, часто через raw type, unchecked cast или generic varargs. <code>@SafeVarargs</code> подавляет предупреждение только когда реализация действительно не записывает небезопасные значения и не выдаёт массив наружу.</p>
+<h2 id="exceptions">Исключения<a class="headerlink" href="#exceptions" title="Permanent link">&para;</a></h2>
+<p><strong>48. Чем checked-исключения отличаются от unchecked и <code>Error</code>?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> Checked-исключение нужно обработать или объявить, наследники <code>RuntimeException</code> — нет; <code>Error</code> обычно сообщает о серьёзной проблеме среды выполнения. Выбор своей иерархии отражает контракт восстановления, а не тяжесть сообщения.</p>
+<p><strong>49. Как выбирается <code>catch</code> и почему порядок блоков важен?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> Выполняется первый подходящий <code>catch</code> сверху вниз, поэтому более конкретный тип должен предшествовать общему; иначе код не скомпилируется. Multi-catch <code>catch (A | B e)</code> подходит для одинаковой обработки несвязанных типов.</p>
+<p><strong>50. Как работает <code>finally</code>, включая <code>return</code> и исключения?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> <code>finally</code> обычно выполняется при выходе из <code>try</code> или <code>catch</code>, но не гарантирован при аварийной остановке JVM. <code>return</code> или исключение из <code>finally</code> может скрыть исходный результат или ошибку, поэтому такой код опасен.</p>
+<p><strong>51. Что гарантирует <code>try-with-resources</code>?</strong> · <strong>junior/middle</strong><br />
+<strong>Ориентир:</strong> Ресурсы <code>AutoCloseable</code> закрываются в порядке, обратном объявлению, даже при исключении. Если и тело, и <code>close()</code> упали, ошибка тела остаётся основной, а ошибки закрытия доступны через <code>getSuppressed()</code>.</p>
+<p><strong>52. Чем <code>throw</code> отличается от <code>throws</code> и что такое exception chaining?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> <code>throw</code> выбрасывает конкретный объект, <code>throws</code> объявляет возможные checked-исключения метода. При переводе ошибки на другой уровень исходную причину передают как <code>cause</code>, чтобы не потерять диагностическую цепочку.</p>
+<p><strong>53. Какие исключения разрешено объявить переопределяющему методу?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Он может убрать checked-исключения или сузить их до подтипов объявленных базовым методом, но не расширить. Unchecked-исключения этим правилом не ограничены.</p>
+<p><strong>54. Когда создавать собственный тип исключения и где переводить техническую ошибку в доменную?</strong> · <strong>senior</strong><br />
+<strong>Ориентир:</strong> Отдельный тип нужен, если вызывающий код должен различить значимый сценарий и отреагировать. Перевод делают на границе, где известен доменный смысл, сохраняя cause и полезный контекст без утечки секретов.</p>
+<h2 id="annotations-reflection-modules">Аннотации, reflection и модули<a class="headerlink" href="#annotations-reflection-modules" title="Permanent link">&para;</a></h2>
+<p><strong>55. Что такое аннотация и какие типы её элементов разрешены?</strong> · <strong>junior/middle</strong><br />
+<strong>Ориентир:</strong> Аннотация добавляет структурированные метаданные к элементу программы; её элементы могут быть примитивами, <code>String</code>, <code>Class</code>, enum, другой аннотацией или одномерным массивом этих типов. Значения по умолчанию задаются через <code>default</code>.</p>
+<p><strong>56. Для чего нужны <code>@Target</code>, <code>@Retention</code>, <code>@Inherited</code>, <code>@Documented</code> и <code>@Repeatable</code>?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Они задают допустимые места, срок хранения, ограниченное наследование аннотации классами, попадание в Javadoc и возможность повторения. <code>@Inherited</code> не распространяется на методы, поля и интерфейсы.</p>
+<p><strong>57. Чем retention <code>SOURCE</code>, <code>CLASS</code> и <code>RUNTIME</code> отличается?</strong> · <strong>junior/middle</strong><br />
+<strong>Ориентир:</strong> <code>SOURCE</code> исчезает после компиляции, <code>CLASS</code> сохраняется в <code>.class</code>, но не обязана быть доступна reflection, <code>RUNTIME</code> доступна во время выполнения. Более долгий retention не нужен, если метаданные читает только компилятор или annotation processor.</p>
+<p><strong>58. Чем annotation processing отличается от reflection?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Processor работает во время компиляции с моделью исходной программы и может генерировать новые файлы, но не переписывать существующий AST стандартным API. Reflection исследует уже загруженные типы во время выполнения и несёт runtime-стоимость и ограничения доступа.</p>
+<p><strong>59. Как получить <code>Class</code> и чем <code>getMethod</code> отличается от <code>getDeclaredMethod</code>?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> <code>Class</code> получают через <code>Type.class</code>, <code>obj.getClass()</code> или <code>Class.forName()</code>. <code>getMethod</code> ищет публичный метод с учётом наследования, <code>getDeclaredMethod</code> — объявленный непосредственно в классе независимо от доступа.</p>
+<p><strong>60. Какие риски есть у изменения доступности через reflection?</strong> · <strong>senior</strong><br />
+<strong>Ориентир:</strong> Reflection ломает инкапсуляцию, усложняет анализ и может быть запрещена модульными границами; <code>setAccessible(true)</code> не гарантирует доступ к закрытому пакету именованного модуля. Предпочтительны публичный контракт, <code>MethodHandles</code> или точечное <code>opens</code>.</p>
+<p><strong>61. Что такое <code>MethodHandle</code> и чем он отличается от <code>Method</code>?</strong> · <strong>senior</strong><br />
+<strong>Ориентир:</strong> <code>MethodHandle</code> — типизированная исполняемая ссылка с явной сигнатурой <code>MethodType</code>, пригодная для композиции и оптимизации JVM. Reflection API удобнее для общего исследования структуры, но вызов через <code>Method</code> слабее типизирован.</p>
+<p><strong>62. Что такое модуль Java и что описывает <code>module-info.java</code>?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Именованный модуль группирует пакеты и явно описывает зависимости и публичные границы. Дескриптор использует <code>requires</code>, <code>exports</code>, <code>opens</code>, <code>uses</code> и <code>provides</code>.</p>
+<p><strong>63. Чем <code>exports</code> отличается от <code>opens</code>, а <code>requires transitive</code> — от <code>requires</code>?</strong> · <strong>senior</strong><br />
+<strong>Ориентир:</strong> <code>exports</code> разрешает обычный доступ к публичным типам пакета, <code>opens</code> — глубокую reflection; оба можно ограничить целевыми модулями. <code>requires transitive</code> дополнительно делает зависимость читаемой для модулей-потребителей.</p>
+<p><strong>64. Что такое unnamed и automatic modules и зачем нужен <code>ServiceLoader</code>?</strong> · <strong>senior</strong><br />
+<strong>Ориентир:</strong> Classpath-код находится в unnamed module, а обычный JAR на module path без дескриптора становится automatic module с автоматически выведенным именем и широким экспортом. <code>ServiceLoader</code> связывает интерфейс с реализациями через <code>uses/provides</code>, не создавая прямой зависимости потребителя от провайдера.</p>
+<h2 id="date-time">Date and Time API<a class="headerlink" href="#date-time" title="Permanent link">&para;</a></h2>
+<p><strong>65. Чем <code>Instant</code>, <code>LocalDate</code>, <code>LocalDateTime</code>, <code>OffsetDateTime</code> и <code>ZonedDateTime</code> отличаются?</strong> · <strong>junior/middle</strong><br />
+<strong>Ориентир:</strong> <code>Instant</code> — точка на временной шкале UTC, локальные типы не содержат смещения или зоны, <code>OffsetDateTime</code> содержит фиксированный offset, <code>ZonedDateTime</code> — правила именованной зоны. Тип выбирают по смыслу данных, а не по удобству форматирования.</p>
+<p><strong>66. Почему для часового пояса лучше <code>ZoneId</code>, а не фиксированный <code>ZoneOffset</code>?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> <code>ZoneId</code> вроде <code>Europe/Moscow</code> применяет исторические и будущие правила зоны, а offset <code>+03:00</code> описывает только одно смещение. Это важно для стран, где правила менялись или действует переход на летнее время.</p>
+<p><strong>67. Что происходит с локальным временем во время DST gap и overlap?</strong> · <strong>senior</strong><br />
+<strong>Ориентир:</strong> При gap некоторые локальные значения не существуют, при overlap одно значение соответствует двум моментам; стандартное разрешение выбирает правила зоны и может сдвинуть время или выбрать более ранний offset. Для критичных расчётов неоднозначность проверяют явно.</p>
+<p><strong>68. Чем <code>Duration</code> отличается от <code>Period</code>?</strong> · <strong>junior/middle</strong><br />
+<strong>Ориентир:</strong> <code>Duration</code> измеряет машинное время в секундах и наносекундах, <code>Period</code> — календарные годы, месяцы и дни. «24 часа» и «следующий календарный день» могут дать разный результат вокруг смены offset.</p>
+<p><strong>69. Являются ли классы <code>java.time</code> и <code>DateTimeFormatter</code> потокобезопасными?</strong> · <strong>junior/middle</strong><br />
+<strong>Ориентир:</strong> Основные классы <code>java.time</code> неизменяемы и потокобезопасны, как и <code>DateTimeFormatter</code>. Это выгодно отличает их от изменяемых <code>Date</code> и небезопасного для совместного использования <code>SimpleDateFormat</code>.</p>
+<p><strong>70. Как тестировать код, зависящий от текущего времени?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Передавайте <code>Clock</code> как зависимость и используйте <code>Clock.fixed</code> или управляемую реализацию в тестах. Это убирает гонки вокруг полуночи, зоны и системных часов.</p>
+<h2 id="io-nio-serialization">I/O, NIO и сериализация<a class="headerlink" href="#io-nio-serialization" title="Permanent link">&para;</a></h2>
+<p><strong>71. Чем байтовые потоки отличаются от символьных?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> <code>InputStream</code>/<code>OutputStream</code> работают с байтами, <code>Reader</code>/<code>Writer</code> — с символами через кодировку. На границе всегда указывайте <code>Charset</code>, обычно UTF-8, вместо зависимости от системного значения по умолчанию.</p>
+<p><strong>72. Зачем нужна буферизация и когда нужно вызывать <code>flush()</code>?</strong> · <strong>junior/middle</strong><br />
+<strong>Ориентир:</strong> Буфер уменьшает число дорогих обращений к ОС или сети, собирая мелкие операции. <code>flush()</code> проталкивает накопленные данные нижележащему потоку, но не обязательно гарантирует запись на физический носитель.</p>
+<p><strong>73. Как правильно закрывать I/O-ресурсы?</strong> · <strong>junior</strong><br />
+<strong>Ориентир:</strong> Используйте <code>try-with-resources</code>, объявляя зависимые ресурсы в порядке создания, чтобы они закрылись в обратном порядке. Закрытие внешней обёртки обычно закрывает и вложенный поток.</p>
+<p><strong>74. Чем <code>Path</code>/<code>Files</code> из NIO.2 удобнее старого <code>File</code>?</strong> · <strong>junior/middle</strong><br />
+<strong>Ориентир:</strong> <code>Path</code> моделирует путь, а <code>Files</code> предоставляет операции чтения, копирования, обхода, атрибутов и ссылок с более ясными исключениями. <code>Path.normalize()</code> лишь синтаксически убирает <code>.</code> и <code>..</code>, а <code>toRealPath()</code> обращается к файловой системе.</p>
+<p><strong>75. Чем blocking, non-blocking и asynchronous I/O отличаются?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Blocking-вызов ждёт завершения операции, non-blocking channel возвращает управление и обычно работает с <code>Selector</code>, asynchronous API сообщает результат позже через callback или future. Выбор зависит от числа соединений, модели нагрузки и сложности обработки, а не только от скорости одной операции.</p>
+<p><strong>76. Как работают <code>ByteBuffer</code>, <code>position</code>, <code>limit</code>, <code>capacity</code>, <code>flip()</code> и <code>compact()</code>?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> <code>position</code> указывает следующую позицию, <code>limit</code> — границу доступных данных, <code>capacity</code> — размер хранилища; после записи <code>flip()</code> готовит буфер к чтению. <code>compact()</code> переносит непрочитанный остаток в начало и готовит свободное место для новой записи.</p>
+<p><strong>77. Для чего нужны <code>Channel</code> и <code>Selector</code>?</strong> · <strong>middle</strong><br />
+<strong>Ориентир:</strong> Channel поддерживает I/O через буферы и может быть двунаправленным, а selector позволяет одному потоку отслеживать готовность множества non-blocking channels. Готовность означает возможность продолжить операцию, но не обещает прочитать или записать все данные за один вызов.</p>
+<p><strong>78. Какие проблемы есть у стандартной Java-сериализации объектов?</strong> · <strong>senior</strong><br />
+<strong>Ориентир:</strong> Она хрупко связывает wire format со структурой классов и опасна для недоверенных данных из-за возможности создавать графы объектов и запускать hooks. Для внешних контрактов обычно выбирают явный формат и строгую схему, а входные фильтры используют как дополнительную защиту.</p>
+<p><strong>79. Для чего нужны <code>Serializable</code>, <code>serialVersionUID</code>, <code>transient</code> и <code>Externalizable</code>?</strong> · <strong>middle/senior</strong><br />
+<strong>Ориентир:</strong> <code>Serializable</code> — marker-интерфейс, <code>serialVersionUID</code> проверяет совместимость версий, <code>transient</code> исключает поле из стандартного состояния. <code>Externalizable</code> отдаёт полное управление чтением и записью классу и требует публичный конструктор без аргументов.</p>
+<p><strong>80. Когда полезны memory-mapped files и zero-copy операции?</strong> · <strong>senior</strong><br />
+<strong>Ориентир:</strong> <code>FileChannel.map</code> отображает участок файла в память, а <code>transferTo/transferFrom</code> могут сократить копирование между user space и kernel space. Они полезны для больших последовательных данных, но требуют учитывать платформенные различия, освобождение mapping, page faults и частичные операции.</p>
+<h2 id="official-sources">Официальные источники<a class="headerlink" href="#official-sources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.oracle.com/javase/specs/jls/se25/html/">Java Language Specification, Java SE 25</a></li>
+<li><a href="https://docs.oracle.com/javase/specs/jvms/se25/html/">Java Virtual Machine Specification, Java SE 25</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/">Java SE 25 API</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/25/core/java-collections-framework.html">Java Collections Framework</a></li>
+<li><a href="https://openjdk.org/projects/jigsaw/spec/">Java Platform Module System</a></li>
+<li><a href="https://openjdk.org/jeps/395">JEP 395: Records</a></li>
+<li><a href="https://openjdk.org/jeps/409">JEP 409: Sealed Classes</a></li>
+<li><a href="https://openjdk.org/jeps/403">JEP 403: Strongly Encapsulate JDK Internals</a></li>
+<li><a href="https://openjdk.org/jeps/290">JEP 290: Filter Incoming Serialization Data</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/datetime/">Date Time Trail, Oracle Java Tutorials</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/essential/io/streams.html">I/O Streams, Oracle Java Tutorials</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/essential/io/fileio.html">File I/O with NIO.2, Oracle Java Tutorials</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Последнее обновление">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 сентября 2026 г. 09:47:16 UTC">13 сентября 2026 г.</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Дата создания">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 сентября 2026 г. 09:47:16 UTC">13 сентября 2026 г.</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../java/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Карта раздела">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Карта раздела
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../java-runtime/" class="md-footer__link md-footer__link--next" aria-label="Вперед: 81–160 · JVM и Concurrency">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                81–160 · JVM и Concurrency
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Материалы проверены 6 сентября 2026 года. Даты источников указаны в тексте.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "content.action.edit", "content.action.view", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

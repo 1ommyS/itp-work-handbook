@@ -1,0 +1,2523 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Практическое руководство по поиску работы в IT в России — от выбора цели до проверки оффера.">
+      
+      
+      
+        <link rel="canonical" href="https://1ommys.github.io/itp-work-handbook/interview-bank/java-ecosystem/">
+      
+      
+        <link rel="prev" href="../java-runtime/">
+      
+      
+        <link rel="next" href="../leetcode-50/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>161–240 · Spring, Data, Architecture - Работа в IT — handbook 2026</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#java-161240" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Работа в IT — handbook 2026" class="md-header__button md-logo" aria-label="Работа в IT — handbook 2026" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6c.58 0 1.05.2 1.42.59.38.41.58.86.58 1.41v11c0 .55-.2 1-.58 1.41-.37.39-.84.59-1.42.59H4c-.58 0-1.05-.2-1.42-.59C2.2 20 2 19.55 2 19V8c0-.55.2-1 .58-1.41C2.95 6.2 3.42 6 4 6h4V4c0-.58.2-1.05.58-1.42C8.95 2.2 9.42 2 10 2h4c.58 0 1.05.2 1.42.58.38.37.58.84.58 1.42v2zM4 8v11h16V8zm10-2V4h-4v2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Работа в IT — handbook 2026
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              161–240 · Spring, Data, Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/1ommyS/itp-work-handbook" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    1ommyS/itp-work-handbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Начало
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/market-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Стратегия
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resume/resume/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Резюме и профиль
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../job-search/channels/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Поиск вакансий
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../interviews/process/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Собеседования
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Практикум собеседований
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../technical/developer/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Техническая подготовка
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../salary/negotiation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Зарплата и оффер
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../templates/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Шаблоны
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../resources/sources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Источники
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Работа в IT — handbook 2026" class="md-nav__button md-logo" aria-label="Работа в IT — handbook 2026" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6c.58 0 1.05.2 1.42.59.38.41.58.86.58 1.41v11c0 .55-.2 1-.58 1.41-.37.39-.84.59-1.42.59H4c-.58 0-1.05-.2-1.42-.59C2.2 20 2 19.55 2 19V8c0-.55.2-1 .58-1.41C2.95 6.2 3.42 6 4 6h4V4c0-.58.2-1.05.58-1.42C8.95 2.2 9.42 2 10 2h4c.58 0 1.05.2 1.42.58.38.37.58.84.58 1.42v2zM4 8v11h16V8zm10-2V4h-4v2z"/></svg>
+
+    </a>
+    Работа в IT — handbook 2026
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/1ommyS/itp-work-handbook" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    1ommyS/itp-work-handbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Стратегия
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Стратегия
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/market-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Рынок России в 2026 году
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/target/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Цель и выбор работодателя
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    План поиска работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/no-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Без коммерческого опыта
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Резюме и профиль
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Резюме и профиль
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resume/resume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Резюме для российского рынка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resume/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Примеры формулировок
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resume/profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Профиль и портфолио
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поиск вакансий
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Поиск вакансий
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../job-search/channels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Каналы поиска
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../job-search/applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отклики и воронка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../job-search/recruiter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общение с рекрутером
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../job-search/rejections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отказы и диагностика
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Собеседования
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Собеседования
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interviews/process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Этапы найма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interviews/behavioral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поведенческое интервью
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interviews/company/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Вопросы компании
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практикум собеседований
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Практикум собеседований
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java — 240 вопросов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Java — 240 вопросов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Карта раздела
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java-core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1–80 · Java Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java-runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    81–160 · JVM и Concurrency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    161–240 · Spring, Data, Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    161–240 · Spring, Data, Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блоки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сборка и зависимости: Maven и Gradle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тестирование: JUnit, Mockito и Testcontainers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spring: Core, Boot, MVC, Data, транзакции и Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL, JDBC, JPA и Hibernate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST, messaging и Kafka
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Архитектура, resilience, безопасность и observability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Официальные источники
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leetcode-50/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    50 задач LeetCode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Техническая подготовка
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Техническая подготовка
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Разработчикам
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Алгоритмы и live coding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/system-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design по уровням
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QA, аналитика, DevOps, дизайн и продукт
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Зарплата и оффер
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Зарплата и оффер
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../salary/negotiation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ожидания и переговоры
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../salary/offer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проверка оффера
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Шаблоны
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блоки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сборка и зависимости: Maven и Gradle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тестирование: JUnit, Mockito и Testcontainers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spring: Core, Boot, MVC, Data, транзакции и Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL, JDBC, JPA и Hibernate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST, messaging и Kafka
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Архитектура, resilience, безопасность и observability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Официальные источники
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/1ommyS/itp-work-handbook/edit/main/docs/interview-bank/java-ecosystem.md" title="Редактировать страницу" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/1ommyS/itp-work-handbook/raw/main/docs/interview-bank/java-ecosystem.md" title="Посмотреть исходный код страницы" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="java-161240">Java-экосистема: вопросы 161–240<a class="headerlink" href="#java-161240" title="Permanent link">&para;</a></h1>
+<p>Этот раздел проверяет не синтаксис Java и устройство JVM, а инструменты и библиотеки, с которыми backend-разработчик работает в проекте. Сначала ответьте без подсказки, затем сравните свой ответ с ориентиром и добавьте пример из практики.</p>
+<h2 id="_1">Блоки<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#build">Сборка и зависимости: Maven и Gradle</a></li>
+<li><a href="#testing">Тестирование: JUnit, Mockito и Testcontainers</a></li>
+<li><a href="#spring">Spring: Core, Boot, MVC, Data, транзакции и Security</a></li>
+<li><a href="#persistence">SQL, JDBC, JPA и Hibernate</a></li>
+<li><a href="#integration">REST, messaging и Kafka</a></li>
+<li><a href="#architecture">Архитектура, resilience, безопасность и observability</a></li>
+</ul>
+<h2 id="build">Сборка и зависимости: Maven и Gradle<a class="headerlink" href="#build" title="Permanent link">&para;</a></h2>
+<p><a id="java-161"></a></p>
+<p><strong>161. Что входит в жизненный цикл Maven?</strong> · junior
+<strong>Ориентир:</strong> Maven выполняет фазы стандартных lifecycle: <code>clean</code>, <code>default</code> и <code>site</code>; вызов фазы запускает и все предыдущие фазы этого lifecycle. Конкретную работу делают goals плагинов, привязанные к фазам.</p>
+<p><a id="java-162"></a></p>
+<p><strong>162. Чем dependency scope <code>compile</code>, <code>runtime</code>, <code>provided</code> и <code>test</code> отличается в Maven?</strong> · junior
+<strong>Ориентир:</strong> Scope определяет, где зависимость доступна и попадёт ли она в runtime classpath и транзитивные зависимости. Например, <code>provided</code> ожидается от среды запуска, а <code>test</code> используется только при компиляции и запуске тестов.</p>
+<p><a id="java-163"></a></p>
+<p><strong>163. Как Maven разрешает конфликт транзитивных версий?</strong> · middle
+<strong>Ориентир:</strong> Обычно побеждает ближайшее объявление в дереве зависимостей, а при одинаковой глубине — первое объявленное. Версии лучше фиксировать централизованно через <code>dependencyManagement</code> и проверять командой <code>dependency:tree</code>.</p>
+<p><a id="java-164"></a></p>
+<p><strong>164. Для чего нужны BOM и <code>dependencyManagement</code>?</strong> · middle
+<strong>Ориентир:</strong> BOM согласует совместимые версии набора библиотек, а <code>dependencyManagement</code> задаёт версии и параметры без автоматического добавления зависимостей в модуль. Это уменьшает дрейф версий в multi-module проекте.</p>
+<p><a id="java-165"></a></p>
+<p><strong>165. Чем Maven-плагин отличается от обычной зависимости?</strong> · junior/middle
+<strong>Ориентир:</strong> Зависимость попадает в classpath приложения или тестов, а плагин исполняет build goals внутри Maven. Версии плагинов также нужно фиксировать для воспроизводимости сборки.</p>
+<p><a id="java-166"></a></p>
+<p><strong>166. Что такое Gradle task и как формируется task graph?</strong> · junior/middle
+<strong>Ориентир:</strong> Task — единица работы со входами, выходами и зависимостями от других tasks. Gradle сначала конфигурирует граф запрошенных задач, затем исполняет его с учётом порядка и актуальности результатов.</p>
+<p><a id="java-167"></a></p>
+<p><strong>167. Чем конфигурации Gradle <code>implementation</code>, <code>api</code>, <code>compileOnly</code> и <code>runtimeOnly</code> отличаются?</strong> · middle
+<strong>Ориентир:</strong> <code>implementation</code> скрывает зависимость от compile classpath потребителя, а <code>api</code> экспортирует её через публичный API библиотеки. <code>compileOnly</code> нужна лишь при компиляции, <code>runtimeOnly</code> — только во время исполнения.</p>
+<p><a id="java-168"></a></p>
+<p><strong>168. Зачем использовать Maven Wrapper или Gradle Wrapper?</strong> · junior
+<strong>Ориентир:</strong> Wrapper запускает зафиксированную проектом версию build tool без предварительной системной установки. Это сближает локальную сборку и CI, но версию JDK и внешние сервисы всё равно нужно согласовать отдельно.</p>
+<p><a id="java-169"></a></p>
+<p><strong>169. Что делает сборку воспроизводимой?</strong> · middle/senior
+<strong>Ориентир:</strong> Фиксированные версии JDK, wrapper, плагинов и зависимостей, lock/checksum-проверки и отсутствие изменяемых артефактов вроде <code>SNAPSHOT</code> снижают расхождения. Сборка также не должна зависеть от локальных файлов, времени или неявного состояния машины.</p>
+<p><a id="java-170"></a></p>
+<p><strong>170. Как ускорять Maven- или Gradle-сборку без потери надёжности?</strong> · senior
+<strong>Ориентир:</strong> Сначала измеряют время конфигурации, компиляции и тестов, затем применяют build cache, incremental build, параллельность и разделение тестов. Кэш в CI должен иметь корректные ключи и не подменять проверку чистой сборкой.</p>
+<h2 id="testing">Тестирование: JUnit, Mockito и Testcontainers<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
+<p><a id="java-171"></a></p>
+<p><strong>171. Чем unit-, integration- и end-to-end-тесты отличаются?</strong> · junior
+<strong>Ориентир:</strong> Unit-тест изолированно проверяет небольшую единицу логики, integration — взаимодействие компонентов или инфраструктуры, end-to-end — пользовательский сценарий через всю систему. Граница определяется реальными зависимостями теста, а не именем каталога.</p>
+<p><a id="java-172"></a></p>
+<p><strong>172. Каков жизненный цикл теста в JUnit Jupiter?</strong> · junior
+<strong>Ориентир:</strong> <code>@BeforeEach</code> и <code>@AfterEach</code> окружают каждый тест, <code>@BeforeAll</code> и <code>@AfterAll</code> — весь класс. По умолчанию JUnit создаёт новый экземпляр тестового класса для каждого метода, если не выбран <code>PER_CLASS</code>.</p>
+<p><a id="java-173"></a></p>
+<p><strong>173. Когда применять parameterized tests?</strong> · junior/middle
+<strong>Ориентир:</strong> Когда один контракт нужно проверить на наборе входов и ожидаемых результатов без копирования тестового кода. Источники аргументов должны оставлять каждый кейс понятным по имени и причине существования.</p>
+<p><a id="java-174"></a></p>
+<p><strong>174. Для чего нужны nested tests и display names?</strong> · junior
+<strong>Ориентир:</strong> <code>@Nested</code> группирует сценарии по состоянию или поведению, а <code>@DisplayName</code> делает отчёт читаемым. Структура полезна, пока не скрывает чрезмерно сложный setup.</p>
+<p><a id="java-175"></a></p>
+<p><strong>175. Что следует проверять через <code>assertThrows</code>?</strong> · junior
+<strong>Ориентир:</strong> Не только тип исключения, но при необходимости сообщение, cause или доменные поля. Проверяемый вызов должен быть минимальным, чтобы тест не прошёл из-за исключения в подготовительном коде.</p>
+<p><a id="java-176"></a></p>
+<p><strong>176. Чем mock, stub и spy отличаются?</strong> · junior/middle
+<strong>Ориентир:</strong> Stub отдаёт заранее заданные ответы, mock дополнительно проверяет взаимодействия, spy оборачивает реальный объект и частично переопределяет поведение. Spy хрупок при побочных эффектах, поэтому его используют осознанно.</p>
+<p><a id="java-177"></a></p>
+<p><strong>177. Когда Mockito <code>verify</code> полезен, а когда делает тест хрупким?</strong> · middle
+<strong>Ориентир:</strong> Проверка взаимодействия уместна для важного внешнего эффекта или протокола, который нельзя наблюдать через результат. Проверять каждый внутренний вызов опасно: рефакторинг реализации ломает тест при неизменном поведении.</p>
+<p><a id="java-178"></a></p>
+<p><strong>178. Чем <code>when(...).thenReturn(...)</code> отличается от <code>doReturn(...).when(...)</code>?</strong> · middle
+<strong>Ориентир:</strong> Обычный стиль вызывает метод внутри <code>when</code>, что проблемно для spy или некоторых void/final сценариев. Семейство <code>doReturn</code>, <code>doThrow</code> и <code>doAnswer</code> задаёт поведение без такого вызова; для чистых mocks обычно читаемее <code>when</code>.</p>
+<p><a id="java-179"></a></p>
+<p><strong>179. Почему не стоит мокать value objects и собственную бизнес-логику?</strong> · middle
+<strong>Ориентир:</strong> Моки полезнее на границах с I/O и нестабильными зависимостями. Мокирование простых объектов и соседних частей домена связывает тест с реализацией и может подтвердить выдуманное поведение вместо реального контракта.</p>
+<p><a id="java-180"></a></p>
+<p><strong>180. Что даёт Testcontainers?</strong> · junior/middle
+<strong>Ориентир:</strong> Он запускает одноразовые контейнеры реальных баз, брокеров и других сервисов для интеграционных тестов. Это повышает реалистичность, но требует контролировать startup time, очистку данных и доступность container runtime.</p>
+<p><a id="java-181"></a></p>
+<p><strong>181. Как управлять жизненным циклом контейнера в тестах?</strong> · middle
+<strong>Ориентир:</strong> Контейнер можно поднимать на класс или переиспользовать в пределах процесса, сохраняя изоляцию данных между тестами. Статический контейнер ускоряет suite, но тесты не должны зависеть от порядка или оставленного состояния.</p>
+<p><a id="java-182"></a></p>
+<p><strong>182. Как тестировать миграции БД?</strong> · middle/senior
+<strong>Ориентир:</strong> Поднять поддерживаемую версию реальной СУБД, применить миграции с нуля и отдельно проверить обновление с репрезентативной предыдущей схемы. In-memory БД не всегда воспроизводит диалект, блокировки и ограничения production-СУБД.</p>
+<h2 id="spring">Spring: Core, Boot, MVC, Data, транзакции и Security<a class="headerlink" href="#spring" title="Permanent link">&para;</a></h2>
+<p><a id="java-183"></a></p>
+<p><strong>183. Что такое IoC и dependency injection в Spring?</strong> · junior
+<strong>Ориентир:</strong> Контейнер создаёт объекты, связывает зависимости и управляет их жизненным циклом. Constructor injection делает обязательные зависимости явными и облегчает тестирование без контейнера.</p>
+<p><a id="java-184"></a></p>
+<p><strong>184. Чем <code>BeanFactory</code> отличается от <code>ApplicationContext</code>?</strong> · middle
+<strong>Ориентир:</strong> <code>BeanFactory</code> задаёт базовый контейнер, а <code>ApplicationContext</code> добавляет события, сообщения, environment, resource loading и интеграцию с инфраструктурой Spring. В приложениях обычно работают с <code>ApplicationContext</code>.</p>
+<p><a id="java-185"></a></p>
+<p><strong>185. Каков жизненный цикл Spring bean?</strong> · middle
+<strong>Ориентир:</strong> После создания и внедрения зависимостей выполняются aware callbacks, bean post-processors и init callbacks; при закрытии контекста — destroy callbacks. Прокси может означать, что вызывающий код работает не с исходным экземпляром.</p>
+<p><a id="java-186"></a></p>
+<p><strong>186. Чем singleton scope Spring отличается от singleton-паттерна?</strong> · junior/middle
+<strong>Ориентир:</strong> Spring singleton означает один bean на <code>ApplicationContext</code> и имя bean, а не один объект на JVM. Он не становится потокобезопасным автоматически, поэтому изменяемое request-specific состояние в нём опасно.</p>
+<p><a id="java-187"></a></p>
+<p><strong>187. Как Spring разрешает несколько beans одного типа?</strong> · junior
+<strong>Ориентир:</strong> Можно уточнить выбор через <code>@Qualifier</code>, имя bean или назначить <code>@Primary</code>. Если однозначного кандидата нет, контейнер обычно завершит создание контекста ошибкой.</p>
+<p><a id="java-188"></a></p>
+<p><strong>188. Как работают Spring AOP proxies и self-invocation?</strong> · middle
+<strong>Ориентир:</strong> Многие возможности Spring реализованы proxy-объектом, который перехватывает внешний вызов bean. Вызов метода через <code>this</code> обходит proxy, поэтому аннотация вроде <code>@Transactional</code> на вызываемом методе может не сработать.</p>
+<p><a id="java-189"></a></p>
+<p><strong>189. Что включает Spring Boot auto-configuration?</strong> · junior/middle
+<strong>Ориентир:</strong> Boot условно регистрирует конфигурацию по classpath, существующим beans, properties и другим условиям. Пользовательский bean или настройка часто заменяет default; отчёт conditions помогает понять принятое решение.</p>
+<p><a id="java-190"></a></p>
+<p><strong>190. Чем starter отличается от auto-configuration?</strong> · junior/middle
+<strong>Ориентир:</strong> Starter — удобный набор зависимостей, а auto-configuration — код, создающий beans при выполнении условий. Они часто поставляются вместе, но решают разные задачи.</p>
+<p><a id="java-191"></a></p>
+<p><strong>191. Как устроены externalized configuration и profiles в Spring Boot?</strong> · middle
+<strong>Ориентир:</strong> Значения приходят из properties/YAML, environment variables, command line и других property sources с определённым приоритетом. Profiles включают группы настроек, но секреты лучше получать из secret storage, а не хранить в профильном файле репозитория.</p>
+<p><a id="java-192"></a></p>
+<p><strong>192. Почему <code>@ConfigurationProperties</code> предпочтительнее множества <code>@Value</code>?</strong> · middle
+<strong>Ориентир:</strong> Она типобезопасно связывает группу настроек, поддерживает validation и метаданные IDE. Один класс также делает контракт конфигурации заметным и тестируемым.</p>
+<p><a id="java-193"></a></p>
+<p><strong>193. Как различаются filter, interceptor и controller advice в Spring MVC?</strong> · middle
+<strong>Ориентир:</strong> Servlet filter работает до DispatcherServlet и подходит для низкоуровневого HTTP-контекста, interceptor окружает обработчик MVC, а advice централизует работу контроллеров, например mapping исключений. Выбор зависит от слоя, где доступен нужный контекст.</p>
+<p><a id="java-194"></a></p>
+<p><strong>194. Как Spring MVC преобразует HTTP-запрос в аргументы controller?</strong> · junior/middle
+<strong>Ориентир:</strong> Handler mapping выбирает метод, argument resolvers извлекают path/query/header/body, а message converters сериализуют тело. Валидация запускается по <code>@Valid</code>/<code>@Validated</code>, если настроены constraints.</p>
+<p><a id="java-195"></a></p>
+<p><strong>195. Как проектировать единый формат ошибок REST в Spring?</strong> · middle
+<strong>Ориентир:</strong> <code>@ControllerAdvice</code> сопоставляет ожидаемые исключения со статусом и стабильным DTO ошибки, например Problem Details. В ответе полезны машинный код, понятное сообщение и correlation ID, но не stack trace и внутренние SQL-детали.</p>
+<p><a id="java-196"></a></p>
+<p><strong>196. Что делает <code>@Transactional</code>?</strong> · junior/middle
+<strong>Ориентир:</strong> Обычно proxy открывает или присоединяет транзакцию перед методом и завершает её после возврата или ошибки. Аннотация не превращает удалённые вызовы в одну ACID-транзакцию и зависит от выбранного transaction manager.</p>
+<p><a id="java-197"></a></p>
+<p><strong>197. Когда Spring откатывает транзакцию по умолчанию?</strong> · middle
+<strong>Ориентир:</strong> В типичной декларативной конфигурации rollback выполняется для <code>RuntimeException</code> и <code>Error</code>, но не для checked exceptions без явного правила. Пойманное внутри метода исключение или self-invocation может изменить ожидаемое поведение.</p>
+<p><a id="java-198"></a></p>
+<p><strong>198. Чем propagation <code>REQUIRED</code> отличается от <code>REQUIRES_NEW</code>?</strong> · middle/senior
+<strong>Ориентир:</strong> <code>REQUIRED</code> присоединяется к текущей транзакции или создаёт новую, <code>REQUIRES_NEW</code> приостанавливает текущую и открывает независимую. Второй режим расходует отдельное соединение и может создавать неожиданные блокировки или частичный commit.</p>
+<p><a id="java-199"></a></p>
+<p><strong>199. Что означают уровни изоляции транзакций?</strong> · middle
+<strong>Ориентир:</strong> Они задают допустимые аномалии конкурентного чтения, но точные гарантии зависят от СУБД и MVCC. Уровень выбирают по инвариантам и проверяют конкурентным тестом, а не только по названию enum.</p>
+<p><a id="java-200"></a></p>
+<p><strong>200. Как Spring Data создаёт реализации repository?</strong> · junior/middle
+<strong>Ориентир:</strong> Spring регистрирует proxy для repository-интерфейса, строит запрос из имени метода или использует явно заданный query. Длинные derived query names лучше заменить понятным запросом, specification или отдельной реализацией.</p>
+<p><a id="java-201"></a></p>
+<p><strong>201. Чем pagination через offset отличается от keyset pagination?</strong> · middle/senior
+<strong>Ориентир:</strong> Offset прост и позволяет перейти к номеру страницы, но на больших смещениях дорог и нестабилен при изменениях данных. Keyset продолжает после последнего сортировочного ключа и требует уникального стабильного порядка.</p>
+<p><a id="java-202"></a></p>
+<p><strong>202. Как устроена filter chain в Spring Security?</strong> · middle
+<strong>Ориентир:</strong> Набор servlet filters извлекает credentials, выполняет authentication, сохраняет security context и применяет authorization. Порядок фильтров важен, а пользовательский фильтр нужно ставить относительно известного стандартного фильтра.</p>
+<p><a id="java-203"></a></p>
+<p><strong>203. Чем authentication отличается от authorization?</strong> · junior
+<strong>Ориентир:</strong> Authentication устанавливает, кто выполняет запрос, authorization решает, разрешено ли ему конкретное действие над ресурсом. Проверки доступа нужны и на URL, и при необходимости на method/domain level.</p>
+<p><a id="java-204"></a></p>
+<p><strong>204. Чем session-based authentication отличается от JWT bearer tokens?</strong> · middle
+<strong>Ориентир:</strong> Сессия хранит server-side состояние и легко отзывается, bearer JWT обычно проверяется локально и сложнее немедленно отозвать. JWT следует валидировать по подписи, issuer, audience и времени, а срок жизни и rotation выбирать по модели угроз.</p>
+<p><a id="java-205"></a></p>
+<p><strong>205. Когда важна CSRF-защита?</strong> · middle
+<strong>Ориентир:</strong> CSRF актуальна, когда браузер автоматически прикладывает credentials, например cookie, к изменяющему запросу. Отключать защиту допустимо после анализа схемы аутентификации; CORS сам по себе CSRF не предотвращает.</p>
+<h2 id="persistence">SQL, JDBC, JPA и Hibernate<a class="headerlink" href="#persistence" title="Permanent link">&para;</a></h2>
+<p><a id="java-206"></a></p>
+<p><strong>206. Как безопасно выполнять параметризованный SQL через JDBC?</strong> · junior
+<strong>Ориентир:</strong> Использовать <code>PreparedStatement</code> и bind-параметры вместо конкатенации пользовательских значений. Имена таблиц и сортировки параметрами не связываются, поэтому их выбирают из allowlist.</p>
+<p><a id="java-207"></a></p>
+<p><strong>207. Зачем приложению connection pool?</strong> · junior/middle
+<strong>Ориентир:</strong> Создание подключения дорого, поэтому pool переиспользует ограниченное число соединений. Размер согласуют с лимитом БД, временем запросов и количеством экземпляров; слишком большой pool усиливает перегрузку.</p>
+<p><a id="java-208"></a></p>
+<p><strong>208. Как правильно закрывать JDBC resources?</strong> · junior
+<strong>Ориентир:</strong> <code>Connection</code>, <code>Statement</code> и <code>ResultSet</code> закрывают через try-with-resources, обычно в обратном порядке. При pool закрытие connection возвращает его в pool, а не обязательно закрывает физическое соединение.</p>
+<p><a id="java-209"></a></p>
+<p><strong>209. Какие свойства SQL-индекса важны разработчику?</strong> · middle
+<strong>Ориентир:</strong> Индекс ускоряет подходящие чтения ценой места и стоимости записи; порядок колонок в составном индексе влияет на применимость. Решение подтверждают планом выполнения и production-подобными объёмами данных.</p>
+<p><a id="java-210"></a></p>
+<p><strong>210. Что такое persistence context в JPA?</strong> · middle
+<strong>Ориентир:</strong> Это unit of work, который отслеживает managed entities и гарантирует identity для одной сущности по ключу внутри контекста. При flush накопленные изменения синхронизируются с БД, но commit может произойти позже.</p>
+<p><a id="java-211"></a></p>
+<p><strong>211. Какие состояния entity различает JPA?</strong> · junior/middle
+<strong>Ориентир:</strong> Новая entity transient, присоединённая к persistence context — managed, удалённая помечена removed, отсоединённая — detached. Dirty checking автоматически сохраняет изменения managed entity при flush.</p>
+<p><a id="java-212"></a></p>
+<p><strong>212. Чем <code>persist</code> отличается от <code>merge</code>?</strong> · middle
+<strong>Ориентир:</strong> <code>persist</code> делает переданный новый объект managed, а <code>merge</code> копирует состояние переданного объекта в managed экземпляр и возвращает его. Исходный detached-объект после <code>merge</code> managed не становится.</p>
+<p><a id="java-213"></a></p>
+<p><strong>213. Что такое lazy loading и <code>LazyInitializationException</code>?</strong> · junior/middle
+<strong>Ориентир:</strong> Lazy association загружается при обращении, часто через proxy или обёртку коллекции. После закрытия persistence context догрузить данные нельзя, поэтому границы выборки проектируют в query/service, а не держат сессию открытой случайно.</p>
+<p><a id="java-214"></a></p>
+<p><strong>214. Что такое проблема N+1 запросов?</strong> · middle
+<strong>Ориентир:</strong> После одного запроса списка приложение выполняет отдельный запрос для связи каждой строки. Её находят по SQL-метрикам и исправляют подходящим fetch join, entity graph, batch fetching или специализированной проекцией, учитывая размер результата.</p>
+<p><a id="java-215"></a></p>
+<p><strong>215. Чем fetch join отличается от обычного <code>join</code> в JPQL?</strong> · middle
+<strong>Ориентир:</strong> Обычный join участвует в фильтрации или выборе, но не обязан инициализировать association. Fetch join указывает загрузить связь в том же запросе; fetch нескольких коллекций и pagination требуют осторожности.</p>
+<p><a id="java-216"></a></p>
+<p><strong>216. Как работают optimistic и pessimistic locking?</strong> · middle/senior
+<strong>Ориентир:</strong> Optimistic locking сравнивает версию и обнаруживает конфликт при записи, pessimistic просит БД удерживать lock. Первый хорош при редких конфликтах с retry, второй может быть нужен при высокой конкуренции, но увеличивает ожидания и риск deadlock.</p>
+<p><a id="java-217"></a></p>
+<p><strong>217. Почему <code>equals</code> и <code>hashCode</code> у JPA entity сложны?</strong> · senior
+<strong>Ориентир:</strong> Сгенерированный id может отсутствовать до persist, proxy меняет фактический класс, а изменяемые поля ломают hash-коллекции. Стратегию выбирают по стабильному business key или аккуратному контракту id и проверяют на transient/managed/detached объектах.</p>
+<p><a id="java-218"></a></p>
+<p><strong>218. Для чего нужны Flyway или Liquibase?</strong> · junior/middle
+<strong>Ориентир:</strong> Они версионируют и последовательно применяют изменения схемы БД. Применённые миграции обычно не переписывают; сложные изменения делают совместимыми с поэтапным rollout приложения.</p>
+<p><a id="java-219"></a></p>
+<p><strong>219. Как безопасно изменить обязательную колонку без остановки сервиса?</strong> · senior
+<strong>Ориентир:</strong> Применяют expand-and-contract: добавить nullable/совместимую структуру, развернуть код с dual read/write или backfill, заполнить данные и только затем ужесточить constraint и удалить старое. Каждый этап должен работать при одновременном существовании соседних версий приложения.</p>
+<h2 id="integration">REST, messaging и Kafka<a class="headerlink" href="#integration" title="Permanent link">&para;</a></h2>
+<p><a id="java-220"></a></p>
+<p><strong>220. Какие свойства HTTP-методов учитывают в REST API?</strong> · junior
+<strong>Ориентир:</strong> Важны safety и idempotency: GET не должен менять состояние, PUT и DELETE должны быть идемпотентны по смыслу, POST обычно нет. Реализация обязана учитывать повторы запросов из-за сетевых сбоев.</p>
+<p><a id="java-221"></a></p>
+<p><strong>221. Как выбрать HTTP status code для ошибки?</strong> · junior/middle
+<strong>Ориентир:</strong> Код отражает класс результата: ошибка входа клиента, отсутствие authentication, запрет, отсутствие ресурса, конфликт состояния или сбой сервера. Бизнес-ошибку не следует маскировать ответом <code>200 OK</code> только ради единого envelope.</p>
+<p><a id="java-222"></a></p>
+<p><strong>222. Как версионировать REST API?</strong> · middle
+<strong>Ориентир:</strong> Сначала стремятся к обратно совместимым изменениям: добавлять необязательные поля и не менять смысл существующих. Breaking changes требуют явной версии, периода миграции, метрик использования и плана отключения старого контракта.</p>
+<p><a id="java-223"></a></p>
+<p><strong>223. Что такое идемпотентность команды и как её обеспечить?</strong> · middle/senior
+<strong>Ориентир:</strong> Повтор одной логической команды не должен создавать дополнительный эффект. Обычно используют idempotency key, уникальное ограничение и атомарное сохранение результата, а не только проверку «есть ли запись» перед insert.</p>
+<p><a id="java-224"></a></p>
+<p><strong>224. Чем очередь сообщений отличается от publish/subscribe?</strong> · junior/middle
+<strong>Ориентир:</strong> В очереди сообщение обычно обрабатывает один competing consumer, а pub/sub доставляет событие нескольким независимым подписчикам. Конкретные гарантии определяет брокер, модель consumer groups и срок хранения.</p>
+<p><a id="java-225"></a></p>
+<p><strong>225. Что означают at-most-once, at-least-once и exactly-once?</strong> · middle
+<strong>Ориентир:</strong> At-most-once допускает потерю без дублей, at-least-once — повторы без потери после подтверждения, exactly-once требует строго определить границу эффекта. Даже при broker-level exactly-once внешняя БД или HTTP-вызов требуют собственной идемпотентности.</p>
+<p><a id="java-226"></a></p>
+<p><strong>226. Как Kafka распределяет сообщения по partitions?</strong> · junior/middle
+<strong>Ориентир:</strong> Producer выбирает partition, часто по hash ключа; порядок гарантируется только внутри одной partition. Число partitions ограничивает параллелизм consumer group и влияет на масштабирование и распределение ключей.</p>
+<p><a id="java-227"></a></p>
+<p><strong>227. Как работает Kafka consumer group и rebalance?</strong> · middle
+<strong>Ориентир:</strong> Каждая partition назначается максимум одному consumer внутри группы, а разные группы читают независимо. При изменении состава или metadata происходит rebalance; долгий handler и неверные timeouts могут вызвать повторную обработку.</p>
+<p><a id="java-228"></a></p>
+<p><strong>228. Когда подтверждать Kafka offset?</strong> · middle/senior
+<strong>Ориентир:</strong> Commit до эффекта рискует потерять сообщение, после эффекта — допускает повтор при сбое между эффектом и commit. Поэтому обработчик проектируют идемпотентным либо атомарно связывают данные и позицию в поддерживаемой транзакционной модели.</p>
+<p><a id="java-229"></a></p>
+<p><strong>229. Что такое transactional outbox?</strong> · senior
+<strong>Ориентир:</strong> Бизнес-изменение и запись будущего сообщения сохраняются в одной локальной транзакции БД, после чего relay публикует outbox в брокер. Возможны повторные публикации, поэтому потребители всё равно должны учитывать дубликаты.</p>
+<h2 id="architecture">Архитектура, resilience, безопасность и observability<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<p><a id="java-230"></a></p>
+<p><strong>230. Когда модульный монолит предпочтительнее микросервисов?</strong> · middle/senior
+<strong>Ориентир:</strong> Когда доменные границы ещё меняются, команда небольшая, а независимое масштабирование и deployment не окупают распределённую сложность. Хорошие внутренние модули сохраняют возможность выделить сервис позже на основе измеренной потребности.</p>
+<p><a id="java-231"></a></p>
+<p><strong>231. Как определить границу микросервиса?</strong> · senior
+<strong>Ориентир:</strong> Граница следует business capability, ownership данных и необходимости независимого изменения, а не таблице или техническому слою. Чрезмерно связанные синхронные вызовы и общая БД обычно указывают на неверное разделение.</p>
+<p><a id="java-232"></a></p>
+<p><strong>232. Почему распределённая транзакция часто заменяется saga?</strong> · senior
+<strong>Ориентир:</strong> Saga связывает локальные транзакции событиями или оркестрацией и применяет компенсирующие действия при сбое. Она принимает eventual consistency и требует явных состояний, идемпотентности и обработки необратимых действий.</p>
+<p><a id="java-233"></a></p>
+<p><strong>233. Как выбирать timeout для внешнего вызова?</strong> · middle/senior
+<strong>Ориентир:</strong> Timeout должен укладываться в end-to-end deadline и опираться на latency distribution зависимости, а не на произвольное круглое число. Нужны отдельные connect/read limits и распространение оставшегося deadline вниз по цепочке.</p>
+<p><a id="java-234"></a></p>
+<p><strong>234. Когда retry помогает, а когда усугубляет сбой?</strong> · middle/senior
+<strong>Ориентир:</strong> Retry полезен для временной ошибки идемпотентной операции с ограниченным числом попыток, backoff и jitter. Повтор permanent error или перегруженного downstream умножает нагрузку и задержку.</p>
+<p><a id="java-235"></a></p>
+<p><strong>235. Для чего нужен circuit breaker?</strong> · middle
+<strong>Ориентир:</strong> Он временно прекращает вызовы явно нездоровой зависимости и периодически проверяет восстановление, уменьшая расход ресурсов и каскадный отказ. Порог, окно и fallback должны соответствовать SLO; breaker не лечит сам сервис.</p>
+<p><a id="java-236"></a></p>
+<p><strong>236. Что такое bulkhead и backpressure?</strong> · senior
+<strong>Ориентир:</strong> Bulkhead ограничивает ресурсы для отдельной зависимости или класса запросов, чтобы сбой не исчерпал всё. Backpressure замедляет или отвергает входную нагрузку, когда потребитель не успевает; неограниченная очередь лишь скрывает перегрузку.</p>
+<p><a id="java-237"></a></p>
+<p><strong>237. Как хранить и передавать секреты приложения?</strong> · middle
+<strong>Ориентир:</strong> Секреты получают во время запуска из управляемого secret store или защищённого окружения с минимальными правами и rotation. Их нельзя коммитить, логировать или включать в diagnostics; утёкший секрет нужно отозвать, а не просто удалить из последнего commit.</p>
+<p><a id="java-238"></a></p>
+<p><strong>238. Какие меры защищают Java REST API кроме authentication?</strong> · middle/senior
+<strong>Ориентир:</strong> Нужны object-level authorization, validation, лимиты размера и частоты, безопасная десериализация, TLS, управление секретами и audit критичных действий. Политика ошибок не должна раскрывать stack traces, credentials или наличие чужих ресурсов.</p>
+<p><a id="java-239"></a></p>
+<p><strong>239. Чем logs, metrics и traces дополняют друг друга?</strong> · junior/middle
+<strong>Ориентир:</strong> Metrics показывают агрегированный тренд и запускают alerts, traces связывают путь запроса между компонентами, logs дают подробные события. Correlation/context fields позволяют переходить между сигналами, а high-cardinality данные требуют контроля стоимости.</p>
+<p><a id="java-240"></a></p>
+<p><strong>240. Что такое SLI, SLO и error budget?</strong> · senior
+<strong>Ориентир:</strong> SLI — измеряемый показатель пользовательской надёжности, SLO — целевое значение за окно, error budget — допустимое отклонение от цели. Эти понятия помогают принимать решения о релизах и надёжности, если измерение отражает реальный пользовательский результат.</p>
+<h2 id="_2">Официальные источники<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html">Apache Maven: Introduction to the Build Lifecycle</a></li>
+<li><a href="https://docs.gradle.org/current/userguide/userguide.html">Gradle User Manual</a></li>
+<li><a href="https://junit.org/junit5/docs/current/user-guide/">JUnit 5 User Guide</a></li>
+<li><a href="https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html">Mockito documentation</a></li>
+<li><a href="https://java.testcontainers.org/">Testcontainers for Java</a></li>
+<li><a href="https://docs.spring.io/spring-framework/reference/">Spring Framework Reference</a></li>
+<li><a href="https://docs.spring.io/spring-boot/reference/">Spring Boot Reference</a></li>
+<li><a href="https://docs.spring.io/spring-data/jpa/reference/">Spring Data JPA Reference</a></li>
+<li><a href="https://docs.spring.io/spring-security/reference/">Spring Security Reference</a></li>
+<li><a href="https://jakarta.ee/specifications/persistence/">Jakarta Persistence specification</a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html">Hibernate ORM User Guide</a></li>
+<li><a href="https://kafka.apache.org/documentation/">Apache Kafka documentation</a></li>
+<li><a href="https://opentelemetry.io/docs/">OpenTelemetry documentation</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Последнее обновление">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 сентября 2026 г. 09:47:16 UTC">13 сентября 2026 г.</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Дата создания">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 сентября 2026 г. 09:47:16 UTC">13 сентября 2026 г.</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../java-runtime/" class="md-footer__link md-footer__link--prev" aria-label="Назад: 81–160 · JVM и Concurrency">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                81–160 · JVM и Concurrency
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../leetcode-50/" class="md-footer__link md-footer__link--next" aria-label="Вперед: 50 задач LeetCode">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                50 задач LeetCode
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Материалы проверены 6 сентября 2026 года. Даты источников указаны в тексте.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "content.action.edit", "content.action.view", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
