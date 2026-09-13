@@ -7,11 +7,11 @@
 
 <div class="grid cards" markdown>
 
--   **Java: классические вопросы**
+-   **Java: 240 вопросов**
 
     ---
 
-    Java Core, Collections, JVM, concurrency, Spring, базы данных и архитектура с короткими ориентирами ответа.
+    Java Core, JVM, concurrency, Spring, базы данных и архитектура на трёх отдельных страницах.
 
     [Открыть базу вопросов →](java.md)
 

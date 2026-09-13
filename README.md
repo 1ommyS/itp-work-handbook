@@ -14,7 +14,7 @@
 | [Резюме и профиль](docs/resume/resume.md) | Резюме под роль, доказательства опыта, портфолио |
 | [Поиск вакансий](docs/job-search/channels.md) | Каналы, адресные отклики, job tracker, работа с отказами |
 | [Собеседования](docs/interviews/process.md) | Карта этапов, истории STAR, вопросы работодателю |
-| [Практикум](docs/interview-bank/index.md) | 95 вопросов по Java и 50 задач LeetCode по паттернам |
+| [Практикум](docs/interview-bank/index.md) | 240 вопросов по Java и 50 задач LeetCode по паттернам |
 | [Техническая подготовка](docs/technical/developer.md) | Приоритеты повторения, алгоритмы, system design, подготовка смежных ролей |
 | [Зарплата и оффер](docs/salary/negotiation.md) | Диапазон ожиданий, переговоры, проверка условий |
 | [Шаблоны](docs/templates/index.md) | Готовые формы, сообщения и чек-листы |

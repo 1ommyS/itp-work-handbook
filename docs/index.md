@@ -28,9 +28,9 @@ Handbook ведёт от выбора IT-роли до проверки оффе
 
 <div class="grid cards" markdown>
 
--   **95 вопросов по Java**
+-   **240 вопросов по Java**
 
-    Core, Collections, JVM, concurrency, Spring, JPA и архитектура с короткими ориентирами ответа.
+    Три уровня: Core; JVM и concurrency; Spring, Data и архитектура. У каждого вопроса есть краткий ориентир ответа.
 
     [Перейти к вопросам →](interview-bank/java.md)
 
